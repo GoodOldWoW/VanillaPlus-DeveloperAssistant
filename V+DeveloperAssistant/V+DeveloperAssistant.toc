@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: V+DeveloperAssistant |cFFFFFFFFv0.1|r
+## Notes: Designed for Vanilla Plus server (compatible with any 1.12 server). Server updates should not affect addon's functionality.
+## Author: Wayborn
+## Version: 0.1
+## SavedVariables: VP_DA_TALENTS
+
+Code.lua

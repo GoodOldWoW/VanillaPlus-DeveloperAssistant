@@ -35,6 +35,6 @@ function GameTooltip.SetTalent(self, tabIndex, talentIndex)
 				table.insert(tableTalent, getglobal('GameTooltipTextRight' .. i):GetText())
 			end
 		end
-		table.insert(VP_DA_TALENTS[class], talent)
+		table.insert(VP_DA_TALENTS[class], tableTalent)
 	end
 end

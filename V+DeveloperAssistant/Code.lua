@@ -6,7 +6,7 @@ f:SetScript('OnEvent', function()
 	if not VP_DA_TALENTS then VP_DA_TALENTS = {} end
 	if not VP_DA_TALENTS[class] then VP_DA_TALENTS[i] = {} end
 end)
-
+--[[
 local HookSetTalent = GameTooltip.SetTalent
 function GameTooltip.SetTalent(self, tabIndex, talentIndex)
 	HookSetTalent(self, tabIndex, talentIndex)
@@ -19,5 +19,22 @@ function GameTooltip.SetTalent(self, tabIndex, talentIndex)
 				table.insert(VP_DA_TALENTS[class][talent], getglobal('GameTooltipTextRight' .. i):GetText())
 			end
 		end
+	end
+end
+]]
+
+local HookSetTalent = GameTooltip.SetTalent
+function GameTooltip.SetTalent(self, tabIndex, talentIndex)
+	HookSetTalent(self, tabIndex, talentIndex)
+	if IsAltKeyDown() then
+		local tableTalent = {}
+		table.insert(tableTalent, tabIndex .. '-' .. talentIndex)
+		for i = 1, GameTooltip:NumLines() do
+			table.insert(tableTalent, getglobal('GameTooltipTextLeft' .. i):GetText())
+			if getglobal('GameTooltipTextRight' .. i):IsVisible() then
+				table.insert(tableTalent, getglobal('GameTooltipTextRight' .. i):GetText())
+			end
+		end
+		table.insert(VP_DA_TALENTS[class], talent)
 	end
 end

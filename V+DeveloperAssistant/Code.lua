@@ -4,7 +4,7 @@ f:RegisterEvent('PLAYER_LOGIN')
 f:SetScript('OnEvent', function()
 	class = UnitClass('player')
 	if not VP_DA_TALENTS then VP_DA_TALENTS = {} end
-	if not VP_DA_TALENTS[class] then VP_DA_TALENTS[i] = {} end
+	if not VP_DA_TALENTS[class] then VP_DA_TALENTS[class] = {} end
 end)
 --[[
 local HookSetTalent = GameTooltip.SetTalent
